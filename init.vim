@@ -12,6 +12,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'danilo-augusto/vim-afterglow'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 call plug#end()
 
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -25,13 +26,21 @@ source ~/.config/nvim/coc.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+"" Tab config
+set expandtab
+set shiftwidth=4
+set autoindent
+set smartindent
+
 "" Cursor line
 "" let g:conoline_color_normal_dark = 'guibg=#1A8fa5eb guifg=#dd111d gui=None '
 ""                           \. 'ctermbg=black ctermfg=white'
-let g:conoline_color_insert_dark = 'guibg=black guifg=white gui=bold '
-			   \. 'ctermbg=black ctermfg=white'
+"" let g:conoline_color_insert_dark = 'ctermfg=white'
 
 "" Theme/Gruvbox config
 let g:afterglow_inherit_background=1
 let g:afterglow_italic_comments=1
 colorscheme afterglow
+
+"" Hotkeys 
+source 	~/.config/nvim/keymap.vim
