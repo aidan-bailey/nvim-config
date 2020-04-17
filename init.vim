@@ -19,6 +19,12 @@ call plug#end()
 ""++++++++++++++++++ PLUGIN CONFIGURATIONS +++++++++++++++++++++
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+"" ALE Confi
+let g:ale_completion_enabled = 0
+let g:ale_lint_on_insert_leave = 1
+let b:ale_linters = ['flake8']
+"let g:ale_python_pylint_options = '--disable=C'
+
 "" Coc config
 source ~/.config/nvim/coc.vim
 

@@ -1,4 +1,13 @@
 {
 "python.jediEnabled": false,
-"clangd.semanticHighlighting": true
+"clangd.semanticHighlighting": true,
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  },
+"python.analysis.diagnosticEnabled": false
 }

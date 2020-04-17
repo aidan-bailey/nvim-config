@@ -15,8 +15,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-
-
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ""+++++++++++++++++++ KEYMAPS ++++++++++++++++++++++++++++++++++
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -58,19 +56,7 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-" Fo 
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-  
-  function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-      execute 'h '.expand('<cword>')
-    else
-      call CocAction('doHover')
-  endfunction    rmatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
+" Format selected code 
 nmap <leader>f  <Plug>(coc-format-selected)
 
 " Applying codeAction to the selected region.
@@ -115,17 +101,43 @@ nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <leader>p  :<C-u>CocListResume<CR>
 
-
 "" Window Navigation
-nnoremap <silent> <leader>l :wincmd l<CR>
-nnoremap <silent> <leader>k :wincmd k<CR>
-nnoremap <silent> <leader>j :wincmd j<CR>
-nnoremap <silent> <leader>h :wincmd h<CR>
+" move 1 window right
+nnoremap <silent> <leader>wl :wincmd l<CR>
+" move 1 window up
+nnoremap <silent> <leader>wk :wincmd k<CR>
+" move 1 window down
+nnoremap <silent> <leader>wj :wincmd j<CR>
+" move 1 window left
+nnoremap <silent> <leader>wh :wincmd h<CR>
+" exit current window
 nnoremap <silent> <leader>wq :wincmd q<CR>
+" horizontally split current window
 nnoremap <silent> <leader>ws :wincmd s<CR>
+" vertically split current window
 nnoremap <silent> <leader>wv :wincmd v<CR>
+" rotate windows clockwise
 nnoremap <silent> <leader>wr :wincmd r<CR>
-
+" rotate windows anti-clockwise
+nnoremap <silent> <leader>wR :wincmd R<CR>
+" move window to top
+nnoremap <silent> <leader>wK :wincmd K<CR>
+" move window to bottom
+nnoremap <silent> <leader>wJ :wincmd J<CR>
+" move window to right
+nnoremap <silent> <leader>wL :wincmd L<CR>
+" move window to left
+nnoremap <silent> <leader>wH :wincmd H<CR>
+" resize all windows to equal size
+nnoremap <silent> <leader>w= :wincmd =<CR>
+" increase window height
+nnoremap <silent> <leader>w+ :wincmd +<CR>
+" decrease window height
+nnoremap <silent> <leader>w- :wincmd -<CR>
+" increase window width
+nnoremap <silent> <leader>w> :wincmd ><CR>
+" decrease window width
+nnoremap <silent> <leader>w< :wincmd <<CR>
 
 "" WhichKey binds
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
