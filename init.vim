@@ -1,4 +1,4 @@
-call plug#begin()
+call plug#begin("~/.config/nvim/plugged")
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kien/ctrlp.vim'
 Plug 'preservim/nerdtree'
@@ -13,6 +13,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'vhdirk/vim-cmake'
 call plug#end()
 
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -20,17 +21,22 @@ call plug#end()
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 "" ALE Confi
+
 let g:ale_completion_enabled = 0
 let g:ale_lint_on_insert_leave = 1
-let b:ale_linters = ['flake8']
-"let g:ale_python_pylint_options = '--disable=C'
+let b:ale_linters = ['flake8', 'pylint']
+let g:ale_fix_on_save = 1
+let g:ale_set_balloons = 1
+let g:ale_set_quickfix = 1
+let g:ale_sign_error = "EE="
+let g:ale_sign_warning = "WW="
+let g:ale_python_pylint_options = '--disable=C'
 
 "" Coc config
 source ~/.config/nvim/coc.vim
 
-"" Ctrlp config
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+""NERDTree confid
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "" Tab config
 set expandtab

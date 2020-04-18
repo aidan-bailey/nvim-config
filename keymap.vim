@@ -22,13 +22,14 @@ endfunction
 "" Unmapping Space
 nnoremap <Space> <NOP>
 
-"" Mapping Alt
-
-
 "" Leader binds
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 nnoremap <silent> <leader>a :echo "I AM FULLY OPERATIONAL!"<CR>
+
+"" Ctrlp config
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 "" Coc binds
 
@@ -54,21 +55,21 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>cr <Plug>(coc-rename)
 
 " Format selected code 
-nmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+"xmap <leader>a  <Plug>(coc-codeaction-selected)
+"nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current line.
-  nmap <leader>ac  <Plug>(coc-codeaction)
+"nmap <leader>ac  <Plug>(coc-codeaction)
 
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+"nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Introduce function text object
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -85,49 +86,49 @@ xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Mappings using CoCList:
 " Show all diagnostics.
-nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<cr>
+"nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent> <leader>e  :<C-u>CocList extensions<cr>
+nnoremap <silent> <leader>ce  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent> <leader>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent> <leader>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent> <leader>j  :<C-u>CocNext<CR>
+nnoremap <silent> <leader>cj  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
+nnoremap <silent> <leader>ck  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent> <leader>p  :<C-u>CocListResume<CR>
+nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
 
 "" Window Navigation
 " move 1 window right
-nnoremap <silent> <leader>wl :wincmd l<CR>
+nnoremap <silent> <c-l> :wincmd l<CR>
 " move 1 window up
-nnoremap <silent> <leader>wk :wincmd k<CR>
+nnoremap <silent> <c-k> :wincmd k<CR>
 " move 1 window down
-nnoremap <silent> <leader>wj :wincmd j<CR>
+nnoremap <silent> <c-j> :wincmd j<CR>
 " move 1 window left
-nnoremap <silent> <leader>wh :wincmd h<CR>
+nnoremap <silent> <c-h> :wincmd h<CR>
 " exit current window
-nnoremap <silent> <leader>wq :wincmd q<CR>
+nnoremap <silent> <c-q> :wincmd q<CR>
 " horizontally split current window
-nnoremap <silent> <leader>ws :wincmd s<CR>
+"nnoremap <silent> <leader>ws :wincmd s<CR>
 " vertically split current window
-nnoremap <silent> <leader>wv :wincmd v<CR>
+"nnoremap <silent> <leader>wv :wincmd v<CR>
 " rotate windows clockwise
-nnoremap <silent> <leader>wr :wincmd r<CR>
+"nnoremap <silent> <leader>wr :wincmd r<CR>
 " rotate windows anti-clockwise
-nnoremap <silent> <leader>wR :wincmd R<CR>
+"nnoremap <silent> <leader>wR :wincmd R<CR>
 " move window to top
-nnoremap <silent> <leader>wK :wincmd K<CR>
+"nnoremap <silent> <C-K> :wincmd K<CR>
 " move window to bottom
-nnoremap <silent> <leader>wJ :wincmd J<CR>
+"nnoremap <silent> <C-J> :wincmd J<CR>
 " move window to right
-nnoremap <silent> <leader>wL :wincmd L<CR>
+"nnoremap <silent> <C-L> :wincmd L<CR>
 " move window to left
-nnoremap <silent> <leader>wH :wincmd H<CR>
+"nnoremap <silent> <C-H> :wincmd H<CR>
 " resize all windows to equal size
 nnoremap <silent> <leader>w= :wincmd =<CR>
 " increase window height
@@ -138,6 +139,14 @@ nnoremap <silent> <leader>w- :wincmd -<CR>
 nnoremap <silent> <leader>w> :wincmd ><CR>
 " decrease window width
 nnoremap <silent> <leader>w< :wincmd <<CR>
+" map open new file vertically
+nnoremap <leader>F :vsp 
+" open new file in current window
+nnoremap <leader>f :e 
+" toggle nerdlist
+nnoremap <leader>d :NERDTreeToggle<CR>
+" terminal
+nnoremap <leader>t :terminal<CR>
 
 "" WhichKey binds
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
