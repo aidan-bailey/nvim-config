@@ -27,6 +27,9 @@ let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 nnoremap <silent> <leader>a :echo "I AM FULLY OPERATIONAL!"<CR>
 
+"" Terminal Binds
+:tnoremap <Esc> <C-\><C-n>
+
 "" Ctrlp config
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -104,42 +107,44 @@ nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
 
 "" Window Navigation
 " move 1 window right
-nnoremap <silent> <c-l> :wincmd l<CR>
+nnoremap <silent> <A-l> :wincmd l<CR>
 " move 1 window up
-nnoremap <silent> <c-k> :wincmd k<CR>
+nnoremap <silent> <A-k> :wincmd k<CR>
 " move 1 window down
-nnoremap <silent> <c-j> :wincmd j<CR>
+nnoremap <silent> <A-j> :wincmd j<CR>
 " move 1 window left
-nnoremap <silent> <c-h> :wincmd h<CR>
+nnoremap <silent> <A-h> :wincmd h<CR>
 " exit current window
-nnoremap <silent> <c-q> :wincmd q<CR>
+nnoremap <silent> <A-q> :wincmd q<CR>
+" move window up
+nnoremap <silent> <A-K> :wincmd K<CR>
+" move window down
+nnoremap <silent> <A-J> :wincmd J<CR>
+" move window left
+nnoremap <silent> <A-H> :wincmd H<CR>
+" move window right
+nnoremap <silent> <A-L> :wincmd L<CR>
 " horizontally split current window
-"nnoremap <silent> <leader>ws :wincmd s<CR>
+nnoremap <silent> <A-s> :wincmd s<CR>
 " vertically split current window
-"nnoremap <silent> <leader>wv :wincmd v<CR>
+nnoremap <silent> <A-v> :wincmd v<CR>
 " rotate windows clockwise
-"nnoremap <silent> <leader>wr :wincmd r<CR>
+nnoremap <silent> <A-r> :wincmd r<CR>
 " rotate windows anti-clockwise
-"nnoremap <silent> <leader>wR :wincmd R<CR>
-" move window to top
-"nnoremap <silent> <C-K> :wincmd K<CR>
-" move window to bottom
-"nnoremap <silent> <C-J> :wincmd J<CR>
-" move window to right
-"nnoremap <silent> <C-L> :wincmd L<CR>
-" move window to left
-"nnoremap <silent> <C-H> :wincmd H<CR>
+nnoremap <silent> <A-R> :wincmd R<CR>
+" resize window up
+nnoremap <silent> <A-+> :resize +5<CR>
+" resize window down
+nnoremap <silent> <A--> :resize -5<CR>
 " resize all windows to equal size
-nnoremap <silent> <leader>w= :wincmd =<CR>
-" increase window height
-nnoremap <silent> <leader>w+ :wincmd +<CR>
-" decrease window height
-nnoremap <silent> <leader>w- :wincmd -<CR>
+nnoremap <silent> <A-=> :wincmd =<CR>
 " increase window width
-nnoremap <silent> <leader>w> :wincmd ><CR>
+nnoremap <silent> <A->> :wincmd 5><CR>
 " decrease window width
-nnoremap <silent> <leader>w< :wincmd <<CR>
-" map open new file vertically
+nnoremap <silent> <A-<> :wincmd 5<<CR>
+
+"" Leader Binding
+"map open new file vertically
 nnoremap <leader>F :vsp 
 " open new file in current window
 nnoremap <leader>f :e 
