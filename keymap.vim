@@ -145,9 +145,15 @@ nnoremap <silent> <A-<> :wincmd 5<<CR>
 
 "" Leader Binding
 "map open new file vertically
-nnoremap <leader>F :vsp 
+nnoremap <leader>Fv :vsp 
+"map open new file horizontally
+nnoremap <leader>Fh :sp 
 " open new file in current window
-nnoremap <leader>f :e 
+nnoremap <leader>f :e
+" save file
+nnoremap <leader>s :w!<CR>
+" exit file
+nnoremap <leader>q :q!<CR>
 " toggle nerdlist
 nnoremap <leader>d :NERDTreeToggle<CR>
 " terminal

@@ -52,6 +52,7 @@ set smartindent
 ""                           \. 'ctermbg=black ctermfg=white'
 "" let g:conoline_color_insert_dark = 'ctermfg=white'
 
+
 "" Theme/Gruvbox config
 let g:afterglow_inherit_background=1
 let g:afterglow_italic_comments=1
