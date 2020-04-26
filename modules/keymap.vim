@@ -1,18 +1,32 @@
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ""+++++++++++++++++++ FUNCTIONS ++++++++++++++++++++++++++++++++
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+function! CheckTerm()
+    if exists(':tnoremap')
+    startinsert
+    endif
+endfunction
 
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ""+++++++++++++++++++ KEYMAPS ++++++++++++++++++++++++++++++++++
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 "" Terminal Binds
-:tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
+" move 1 window right
+tnoremap <silent> <A-l> <C-\><C-n>:wincmd l<CR>
+" move 1 window up
+tnoremap <silent> <A-k> <C-\><C-n>:wincmd k<CR>
+" move 1 window down
+tnoremap <silent> <A-j> <C-\><C-n>:wincmd j<CR>
+" move 1 window left
+tnoremap <silent> <A-h> <C-\><C-n>:wincmd h<CR>
 
 "" Ctrlp config
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+nnoremap <leader>pb :CtrlPBuffer<CR>
+nnoremap <leader>pt :CtrlPTag<CR>
 
 "" Window Navigation
 " move 1 window right
@@ -48,26 +62,59 @@ nnoremap <silent> <A--> :resize -5<CR>
 " resize all windows to equal size
 nnoremap <silent> <A-=> :wincmd =<CR>
 " increase window width
+nnoremap <silent> <A->> <NOP>
 nnoremap <silent> <A->> :wincmd 5><CR>
 " decrease window width
+nnoremap <silent> <A-<> <NOP>
 nnoremap <silent> <A-<> :wincmd 5<<CR>
 
+
 "" Leader Binding
+nnoremap gv 35j
+nnoremap gV 35k
 "map open new file vertically
 nnoremap <leader>Fv :vsp 
 "map open new file horizontally
-nnoremap <leader>Fh :sp 
+nnoremap <leader>Fs :sp 
 " open new file in current window
-nnoremap <leader>f :e
+nnoremap <leader>f :e 
+" open file in new tab
+nnoremap <leader>Ft :tabnew  
 " save file
-nnoremap <leader>s :w!<CR>
+nnoremap <leader>w :w!<CR>
 " exit file
 nnoremap <leader>q :q!<CR>
 " toggle nerdlist
-nnoremap <leader>d :NERDTreeToggle<CR>
-" terminal
-nnoremap <leader>t :terminal<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+" enter command
+nnoremap <leader>b :! 
+
+"" File Specific Binds
+autocmd FileType cpp nnoremap <localleader>c :CMake<CR>
 
 "" WhichKey binds
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+
+"" Tab Hotkeys
+" New Tab
+nnoremap <silent> <A-t> :tabnew<CR>
+" Close tab
+nnoremap <silent> <A-c> :tabc<CR>
+" Next Tab
+nnoremap <silent> <A-f> :tabn<CR>
+" Previous Tab
+nnoremap <silent> <A-b> :tabp<CR>
+" Move Tab
+nnoremap <silent> <A-m> :tabs<CR>
+
+"load source
+nnoremap <leader>R :!source ~/.config/nvim/init.vim<CR>
+
+" Ctags
+" Search for tag
+nnoremap <silent> <leader>ts :ts  
+" Go to next tag
+nnoremap <silent> <leader>tn :tn<CR>
+" Go to previous tag
+nnoremap <silent> <leader>tp :tp<CR>

@@ -9,5 +9,33 @@
       "ignoredRootPaths": ["~"]
     }
   },
-"python.analysis.diagnosticEnabled": false
+  "languageserver": {
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": ["vim", "eruby", "markdown", "md"]
+    }
+  },
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp", "hpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+      "initializationOptions": {
+         "cache": {
+           "directory": "/tmp/ccls"
+         }
+       }
+    }
+  },
+  "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+      "filetypes": ["c", "cpp", "objc", "objcpp", "hpp"]
+    }
+  }, 
+"coc.preferences.useQuickfixForLocations": false,
+"diagnostic.displayByAle": false,
+"diagnostic.enable": true
 }
