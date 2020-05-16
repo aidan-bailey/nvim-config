@@ -5,12 +5,12 @@
 """"""""""""""""""""""""""""""""""""""""""""
 let g:ale_completion_enabled = 0
 let g:ale_lint_on_insert_leave = 1
-let g:ale_linters_explicit = 1
-let b:ale_linters ={ 
-    \ 'cpp': [''],
-    \ 'python': [''],
-    \ 'bash': [''],
-    \}
+"let g:ale_linters_explicit = 1
+"let b:ale_linters ={ 
+"    \ 'cpp': [''],
+"    \ 'python': [''],
+"    \ 'bash': [''],
+"    \}
 let g:ale_cpp_clang_options = '-std=c++11 -Wall'
 let g:ale_cpp_clangd_options = '-std=c++11 -Wall'
 let g:ale_fix_on_save = 1

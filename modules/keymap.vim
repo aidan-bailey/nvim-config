@@ -6,7 +6,6 @@ function! CheckTerm()
     startinsert
     endif
 endfunction
-
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ""+++++++++++++++++++ KEYMAPS ++++++++++++++++++++++++++++++++++
 ""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -70,24 +69,23 @@ nnoremap <silent> <A-<> :wincmd 5<<CR>
 
 
 "" Leader Binding
+nnoremap gg :0<CR>
 nnoremap gv 35j
 nnoremap gV 35k
 "map open new file vertically
-nnoremap <leader>Fv :vsp 
+nnoremap <leader>Fv :vsp <tab>
 "map open new file horizontally
-nnoremap <leader>Fs :sp 
+nnoremap <leader>Fs :sp <tab>
 " open new file in current window
-nnoremap <leader>f :e 
+nnoremap <leader>f :e <tab>
 " open file in new tab
-nnoremap <leader>Ft :tabnew  
+nnoremap <leader>Ft :tabnew <tab> 
 " save file
-nnoremap <leader>w :w!<CR>
+nnoremap <leader>w :wall!<CR>
 " exit file
 nnoremap <leader>q :q!<CR>
 " toggle nerdlist
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>
-" enter command
-nnoremap <leader>b :! 
 
 "" File Specific Binds
 autocmd FileType cpp nnoremap <localleader>c :CMake<CR>
@@ -95,6 +93,7 @@ autocmd FileType cpp nnoremap <localleader>c :CMake<CR>
 "" WhichKey binds
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+nnoremap <silent> g             :<c-u>WhichKey 'g'<CR>
 
 "" Tab Hotkeys
 " New Tab
@@ -108,8 +107,21 @@ nnoremap <silent> <A-b> :tabp<CR>
 " Move Tab
 nnoremap <silent> <A-m> :tabs<CR>
 
+"Buffer Binds
+nnoremap <leader>bl :buffers<CR>
+nnoremap <leader>bdd :bd<CR>
+nnoremap <leader>bdn :bdelete <tab> 
+nnoremap <leader>be :b <tab>
+
+
 "load source
 nnoremap <leader>R :!source ~/.config/nvim/init.vim<CR>
+
+"Folds
+nnoremap <TAB> za
+
+"Anyfold
+
 
 " Ctags
 " Search for tag

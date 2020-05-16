@@ -1,8 +1,6 @@
-""+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-""++++++++++++++++ VIM PLUGS ++++++++++++++++++++++++++++++++++++
-""+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 call plug#begin('/home/aidanjbailey/.config/nvim/plugged')
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'idanarye/vim-vebugger'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'skywind3000/asyncrun.vim'
 Plug 'kien/ctrlp.vim'
@@ -22,11 +20,11 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-""++++++++++++++++++ VIM CONFIGURATIONS ++++++++++++++++++++++++
-""++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"" ++++++++++++++++++ VIM CONFIGURATIONS ++++++++++++++++++++++++
+"" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-""++++++++++++++ INITIAL SETUP ++++++++++++++++++++++++++++
+"" ++++++++++++++ INITIAL SETUP ++++++++++++++++++++++++++++
 
 filetype plugin on
 let g:loaded_matchparen=0
@@ -40,6 +38,8 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_posix_standard = 1
 
+" Folds
+"hi Folded ctermbg=172
 
 "" Leader binds
 let g:mapleader = "\<Space>"
@@ -53,13 +53,20 @@ highlight CursorLine guibg=#2e2e2e
 set relativenumber
 set numberwidth=2
 
+"" fold
+"set foldmethod=syntax
+
 " Tab config
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set autoindent
 set smartindent
 syntax on
 
+" Disabling Ale for Coc Languages
+autocmd Filetype cpp :ALEDisable
+autocmd Filetype hpp :ALEDisable
+autocmd Filetype python :ALEDisable
 
 "" Theme config
 let g:afterglow_inherit_background=0    
@@ -86,5 +93,5 @@ source ~/.config/nvim/modules/coc.vim
 "" Conoline Modules
 "source ~/.config/nvim/modules/conoline.vim
 
-""NERDTree config
+"" NERDTree config
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

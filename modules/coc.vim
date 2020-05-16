@@ -2,8 +2,7 @@
 set hidden
 
 " Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
+" set nobackup set nowritebackup
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -74,6 +73,7 @@ nmap <leader>cn <Plug>(coc-rename)
 " Formatting selected code.
 xmap <leader>cf  <Plug>(coc-format-selected)
 nmap <leader>cf  <Plug>(coc-format-selected)
+nmap <leader>d  <Plug>(coc-format)
 
 augroup mygroup
   autocmd!
@@ -102,8 +102,8 @@ omap af <Plug>(coc-funcobj-a)
 " Use <TAB> for selections ranges.
 " NOTE: Requires 'textDocument/selectionRange' support from the language server.
 " coc-tsserver, coc-python are the examples of servers that support it.
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
+"nmap <silent> <TAB> <Plug>(coc-range-select)
+"xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -138,5 +138,6 @@ nnoremap <silent> <leader>ck  :<C-u>CocPrev<CR>
 nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
 
 "" Highlighting
+hi! CocErrorSign ctermfg=red
 hi! CocErrorFloat ctermfg=208
 hi! Pmenu ctermbg=240
