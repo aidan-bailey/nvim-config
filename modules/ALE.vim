@@ -19,7 +19,7 @@ let g:ale_set_quickfix = 1
 let g:ale_sign_error = 'EE'
 let g:ale_sign_warning = 'WW'
 let g:ale_echo_msg_format = '(%linter%)%code:  %%s'
-let g:ale_open_list = 1
+let g:ale_open_list = 0
 let g:cmake_ycm_symlinks = 1
 let g:ale_list_window_size = 5
 

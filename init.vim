@@ -17,6 +17,7 @@ Plug 'vhdirk/vim-cmake', { 'for': ['cpp','c','h'] }
 Plug 'vim-airline/vim-airline'
 Plug 'oblitum/rainbow'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
