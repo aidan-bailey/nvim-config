@@ -1,4 +1,4 @@
-call plug#begin('/home/aidanjbailey/.config/nvim/plugged')
+call plug#begin('/home/aidanb/.config/nvim/plugged')
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'idanarye/vim-vebugger'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -70,7 +70,7 @@ autocmd Filetype hpp :ALEDisable
 autocmd Filetype python :ALEDisable
 
 "" Theme config
-let g:afterglow_inherit_background=0    
+let g:afterglow_inherit_background=0
 colorscheme afterglow
 let g:airline_theme = 'afterglow'
 
