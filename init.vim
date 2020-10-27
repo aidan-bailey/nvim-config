@@ -1,4 +1,4 @@
-call plug#begin('/home/aidanjbailey/.config/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'vim-airline/vim-airline'
